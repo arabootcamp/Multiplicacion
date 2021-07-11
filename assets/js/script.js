@@ -1,13 +1,13 @@
 let button = document.getElementById('play');
 
-button.onclick= function() {
+button.addEventListener('click', function () {
 
   let requestNumber = () => {
     let num, error = false;
     do {
       if (error == true)
-        alert("Número fuera del rango.");
-      num = parseInt(prompt("Ingrese un número entre 1 a 20 para realizar las operaciones."));
+        alert('Número fuera del rango.');
+      num = parseInt(prompt('Ingrese un número entre 1 a 20 para realizar las operaciones.'));
       error = true;
     } while (isNaN(num) || !Number.isInteger(num) || num > 20 || num < 1);
     return num;
@@ -34,4 +34,4 @@ button.onclick= function() {
   console.log(`\nNúmero ingresado: ${numOk}\n\n`);
   multiplication(numOk);
   factorial(numOk);
-};
+});
